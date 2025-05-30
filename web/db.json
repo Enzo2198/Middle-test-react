@@ -1,0 +1,32 @@
+{
+  "product": [
+    {
+      "id": "1",
+      "name": "Bàn chải",
+      "price": "20000",
+      "remaining": "50"
+    },
+    {
+      "id": "2",
+      "name": "Coca lon",
+      "price": "8000",
+      "remaining": "103"
+    }
+  ],
+  "order": [
+    {
+      "id": "1",
+      "date": "2025-05-25",
+      "product_id": "2",
+      "quantity": "2",
+      "amount": "16000"
+    },
+    {
+      "id": "2",
+      "date": "2025-05-25",
+      "product_id": "1",
+      "quantity": "1",
+      "amount": "20000"
+    }
+  ]
+}
