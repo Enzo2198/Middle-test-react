@@ -1,7 +1,24 @@
-import { TableContainer, Table, TableRow, TableCell, TableBody, TableHead } from '@mui/material'
 import Paper from "@mui/material/Paper";
+import {Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from "@mui/material";
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import {memo} from 'react'
 
-export default function FTable({}) {
+
+const RenderActionBtn = (headers, rowId, onUpdate) => {
+  const keys = headers.map(header => header.name)
+  if (!keys.includes('action')) return
+
+  return (
+    <TableCell size={"small"} key={`action-${rowId}`}>
+      <EditIcon color={'success'} onClick={onUpdate}/>
+      <DeleteOutlineIcon color={'error'} />
+    </TableCell>
+  )
+}
+
+
+function FTableComponent({headers, rows, onUpdate, width}) {
   return (
     <>
       <TableContainer sx={{maxWidth: width, margin: 'auto'}} component={Paper}>
@@ -53,3 +70,5 @@ export default function FTable({}) {
     </>
   )
 }
+
+export default memo(FTableComponent)
